@@ -6,6 +6,12 @@ namespace PadawansTask11
     {
         public static int? FindIndex(double[] array, double accuracy)
         {
+            if (array == null)
+                throw new ArgumentNullException();
+            if (array.Length == 0)
+                throw new ArgumentException();
+            if (accuracy <= 0 || accuracy >= 1)
+                throw new ArgumentOutOfRangeException();
             for (int i = 1; i < array.Length; i++)
             {
                 double leftSum = 0;
